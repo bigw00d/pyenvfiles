@@ -1,0 +1,95 @@
+Coding Style
+muiのコーディングスタイルは、mbed OS Coding styleにしたがう。
+ルール
+インデント - 4スペース。 タブを使わない
+Braces（{ }：波括弧、中括弧） - K＆Rスタイル
+One true brace style (1TBS) - if、else、whileおよびfor型のステートメントにはbrace（波括弧）を使用する（
+K＆Rの例外）
+ステートメントごとに1行とする
+プリプロセッサマクロは新しい行の先頭で開始し、内部のコードはその上のコードに従ってインデントされる
+switch内のケースはインデントされる（K＆Rの例外）
+if、while、for、switchの後はスペース。 バイナリ演算子（+や*など）や三項演算子（?や:）にも同じことがいえる
+各行は、最大120文字が好ましい
+コメントは、適切なスペルと文法を使用する必要がある
+ポインタの場合、「*」は名前に隣接する（analogin_t *obj）
+行の最後にスペースを残さない
+空行には末尾にスペースを入れない
+Unixの行末はファイルのデフォルトオプション
+マクロには大文字を使用する
+ファイルの最後に空行を入れる
+その他
+エンコーディング（文字コード）：UTF-8
+各ヘッダファイルはファイルの先頭、最後尾を以下の通りとする
+ファイルの先頭、最後尾
+#ifndef ClassName_H
+#define ClassName_H
+:
+#endif /** ClassName_H */
+コードサンプル　※Naming Ruleは別途規定する
+
+
+
+---------
+
+Comment Style
+基本的に、doxygen javadocのスタイルに従う。
+※参考
+mbed sdk coding style：Doxygen documentation
+mbed API Documentation：How to add documentation to your own programs and libraries
+基本
+コメントブロックは /**または/*!で始める
+1行のコメントは //!または///で始める
+ファイルヘッダ
+Example
+/** My HelloWorld class.
+* Used for printing "Hello World" on USB serial.
+*/
+class HelloWorld {
+public:
+/** Create HelloWorld instance */
+HelloWorld();
+/** Print the text */
+printIt(uint32_t delay = 0);
+};
+関数ヘッダ
+Example
+/** ADC Measurement method
+*
+* @param obj Pointer to the analogin object.
+* @param options Options to be enabled by ADC peripheral.
+*
+* @returns
+* Measurement value on defined ADC channel.
+*/
+uint32_t adc_function(analogin_t *obj, uint32_t options)
+
+
+---------
+
+Naming Rules
+※規約内の用語は、「Qiita：各プログラミング言語のコーディング規約まとめ」を参照。
+命名規約
+単語の省略は原則行わない
+略語の扱い：略語で使われてる大文字をそのまま大文字として表現する
+パッケージ名
+基本的にアッパーキャメルケースを使う
+ファイル名
+アッパーキャメルケースを使う
+publicクラスはそのクラスで1ファイルとする
+クラス名
+基本的に ファイル名と同一とする
+メンバ変数名
+"_"+ローワーキャメルケースを使う
+構造体名
+パアッパーキャメルケースを使う
+要素名は、ローワーキャメルケースを使う
+定数定義名
+全て大文字のスネークケースを使う
+列挙型（enum）名
+アッパーキャメルケースを使う
+要素名は、全て大文字のスネークケースを使う
+グローバル変数名
+※原則 使用しない。static変数として以下を適用する。
+アッパーキャメルケースを使う
+ローカル変数名
+ローワーキャメルケースを使う
