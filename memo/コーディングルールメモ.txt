@@ -1,5 +1,5 @@
 Coding Style
-muiのコーディングスタイルは、mbed OS Coding styleにしたがう。
+コーディングスタイルは、mbed OS Coding styleにしたがう。
 ルール
 インデント - 4スペース。 タブを使わない
 Braces（{ }：波括弧、中括弧） - K＆Rスタイル
